@@ -89,30 +89,12 @@
     top: -92px;
   }
   
-  #album-name {
+  #lyrics {
     color: #54576f;
     font-size: 17px;
     font-weight: bold;
-  }
-  
-  #track-name {
-    color: #acaebd;
-    font-size: 13px;
-    margin: 2px 0 13px 0;
-  }
-  
-  #track-time {
-    height: 12px;
-    margin-bottom: 3px;
-    overflow: hidden;
-  }
-  
-  #current-time {
-    float: left;
-  }
-  
-  #track-length {
-    float: right;
+    padding-top: 20px;
+    padding-bottom: 10px;
   }
   
   #current-time,
@@ -122,12 +104,6 @@
     background-color: #ffe8ee;
     border-radius: 10px;
     transition: 0.3s ease all;
-  }
-  
-  #track-time.active #current-time,
-  #track-time.active #track-length {
-    color: #f86d92;
-    background-color: transparent;
   }
   
   #s-area,
