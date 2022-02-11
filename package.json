@@ -1,0 +1,28 @@
+{
+  "name": "strangers",
+  "version": "1.0.0",
+  "description": "Casa das memórias e sonhos de alguns estranhos. Bem-vindo.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jcezarms/strangers.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jcezarms/strangers/issues"
+  },
+  "homepage": "https://github.com/jcezarms/strangers#readme",
+  "dependencies": {
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
+  },
+  "devDependencies": {
+    "@babel/preset-env": "^7.16.11",
+    "@babel/preset-react": "^7.16.7"
+  }
+}
