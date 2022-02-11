@@ -1,3 +1,5 @@
+import './player.css'
+
 class Player extends React.Component {
     constructor(props) {
         super(props);
@@ -72,9 +74,12 @@ class Player extends React.Component {
                 </div>
                 <div id="player-controls">
                     <div class="control">
-                    <div class="button" id="play-pause-button" onClick={this.playPause()}>
-                        <i class="fas fa-play"></i>
+                        <div class="button" id="play-pause-button" onClick={this.playPause()}>
+                            <i class="fas fa-play"></i>
+                        </div>
                     </div>
+                    <div class="control-name">
+                        {this.state.name}
                     </div>
                 </div>
                 </div>
