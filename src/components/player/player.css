@@ -90,7 +90,7 @@
   }
   
   #lyrics {
-    color: #54576f;
+    color: black;
     font-size: 17px;
     font-weight: bold;
     padding-top: 20px;
@@ -284,7 +284,8 @@
     line-height: 50px;
     float: left;
     padding: 12px 0;
-    text-align: center;
+    color: #54576f;
+    text-align: left;
   }
   
   .button {
