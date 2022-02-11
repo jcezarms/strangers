@@ -2,8 +2,31 @@
     outline: none;
   }
   
+  @font-face {
+    font-family: Gordita;
+    src: url("/assets/font/Gordita/Gordita-Regular.otf");
+  }
+
+  @font-face {
+    font-family: Gordita;
+    src: url("/assets/font/Gordita/Gordita-RegularItalic.otf");
+    font-style: italic;
+  }
+
+  @font-face {
+    font-family: Gordita;
+    src: url("/assets/font/Gordita/Gordita-Bold.otf");
+    font-weight: bold;
+  }
+
+  @font-face {
+    font-family: Gordita;
+    src: url("/assets/font/Gordita/Gordita-Black.otf");
+    font-weight: bolder;
+  }
+
   body {
-    font-family: Helvetica, Arial;
+    font-family: Gordita, sans-serif;
     margin: 0;
     background-color: #ffeff5;
   }
@@ -276,6 +299,12 @@
   
   .control {
     width: 33.333%;
+    float: left;
+    padding: 12px 0;
+  }
+
+  .control-name {
+    width: 66.666%;
     float: left;
     padding: 12px 0;
   }
