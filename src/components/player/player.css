@@ -215,7 +215,6 @@
   
   #album-art.active img.active {
     z-index: 1;
-    animation: rotateAlbumArt 3s linear 0s infinite forwards;
   }
   
   @keyframes rotateAlbumArt {
@@ -281,8 +280,11 @@
 
   .control-name {
     width: 66.666%;
+    height: 50px;
+    line-height: 50px;
     float: left;
     padding: 12px 0;
+    text-align: center;
   }
   
   .button {
