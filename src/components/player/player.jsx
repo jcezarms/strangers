@@ -24,7 +24,7 @@ class Player extends React.Component {
 		[46.208, "E sem risadas controladas", "Lari"],
 		[48.866, "Bom, hoje eu acho que é assim", "Drecoy"],
 		[51.676, "Que as pessoas mais interessantes", "Ju"],
-		[54.789, "São lembradas.", "Ju&Ana"],
+		[54.289, "São lembradas.", "Ju&Ana"],
 		[57.029, "Se depender de um devaneio tolo", "If"],
 		[59.687, "Ou de encontrarmos tesouro", "Kakau"],
 		[62.003, "Em um trejeito infantil", "Luísa"],
@@ -35,7 +35,7 @@ class Player extends React.Component {
 		[75.406, "Das que, se estranha, se admite", "Arantes"],
 		[78.330, "Devaneios tortos nas portas", "Mari"],
 		[80.760, "Pisos de passos dançados em hit", "Siquino"],
-		[83.726, "Experiências novas em ouro", "Bia"],
+		[83.000, "Experiências novas em ouro", "Bia"],
 		[85.278, "E humildade em madeirite", "Yuri"],
 		[88.354, "Assim como a vida ensina", "Ju"],
 		[91.050, "O que a maioria das mães já insiste", "Julio"],
@@ -76,14 +76,6 @@ class Player extends React.Component {
                 playProgress: (_this.audio.current.currentTime / _this.audio.current.duration) * 100
             })
 
-            if (_this.state.playProgress === 100) {
-                _this.setState({
-                    payProgress: 0,
-                    trackAlbumClass: "active",
-                    iPlayClasses: "fa fa-pause"
-                })
-            }
-
             const next = _this.state.i + 1;
             if (next < _this.audio_checkpoints.length) {
                 // TODO: Create in constructor to use below:
@@ -101,6 +93,19 @@ class Player extends React.Component {
                     // console.log(_this.audio_checkpoints[next])
                 }
             }
+        }
+    }
+
+    resetAudio(_this) {
+        if (_this.state.playProgress === 100) {
+            _this.setState({
+                i: 0,
+                name: "-",
+                lyric: "...",
+                payProgress: 0,
+                trackAlbumClass: "",
+                iPlayClasses: "fa fa-pause"
+            })
         }
     }
 
@@ -125,6 +130,7 @@ class Player extends React.Component {
     componentDidMount() {
         // this.audio.ontimeupdate(this.updateAudio);
         this.audio.current.addEventListener('timeupdate', () => this.updateAudio(this));
+        this.audio.current.addEventListener('ended', () => this.resetAudio(this));
         this.audio.current.loop = false;
     }
 
