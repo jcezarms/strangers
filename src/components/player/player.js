@@ -24,7 +24,7 @@ class Player extends React.Component {
     playPause() {
         setTimeout(() => {
             if (this.audio.paused) {
-                this.setState((prevState) => ({
+                this.setState(prevState => ({
                     trackStatus: `${prevState.trackStatus} active`,
                     albumArtStatus: `${prevState.albumArtStatus} active`
                 }));
@@ -34,7 +34,7 @@ class Player extends React.Component {
                 });
                 this.audio.play();
             } else {
-                this.setState((prevState) => ({
+                this.setState(prevState => ({
                     trackStatus: prevState.trackStatus.replace(" active", ""),
                     albumArtStatus: prevState.albumArtStatus.replace(" active", "")
                 }));
