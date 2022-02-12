@@ -1,5 +1,8 @@
 import './Player.css'
 import React from 'react' 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+
+
 
 class Player extends React.Component {
     
@@ -53,7 +56,7 @@ class Player extends React.Component {
             lyric: "...",
             playProgress: 0,
             trackAlbumClass: "",
-            iPlayClasses: "fa fa-pause"
+            playerIcon: "play"
         };
         this.audio = React.createRef();
         this.seekBar = React.createRef();
@@ -63,7 +66,7 @@ class Player extends React.Component {
 
     profilePic(name) {
         // TODO: Dynamically render pictures when name.includes("&")
-        return `${process.env.PUBLIC_URL}/assets/img/users/${name}/profile.jpg`
+        return `/assets/img/users/${name}/profile.jpg`
     }
 
     currentName(name) {
@@ -97,16 +100,14 @@ class Player extends React.Component {
     }
 
     resetAudio(_this) {
-        if (_this.state.playProgress === 100) {
-            _this.setState({
-                i: 0,
-                name: "-",
-                lyric: "...",
-                payProgress: 0,
-                trackAlbumClass: "",
-                iPlayClasses: "fa fa-pause"
-            })
-        }
+        _this.setState({
+            i: 0,
+            name: "-",
+            lyric: "...",
+            payProgress: 0,
+            trackAlbumClass: "",
+            playerIcon: "play"
+        })
     }
 
     playPause(_this) {
@@ -114,13 +115,13 @@ class Player extends React.Component {
             if (_this.audio.current.paused) {
                 _this.setState({
                     trackAlbumClass: "active",
-                    iPlayClasses: "fa fa-pause"
+                    playerIcon: "pause"
                 })
                 _this.audio.current.play();
             } else {
                 _this.setState({
                     trackAlbumClass: "",
-                    iPlayClasses: "fa fa-play"
+                    playerIcon: "play"
                 })
                 _this.audio.current.pause();
             }
@@ -138,34 +139,36 @@ class Player extends React.Component {
         return (
             <div id="app-cover">
                 <audio ref={this.audio} src={this.props.url} style={{visibility:'hidden'}} />
-                <div id="bg-artwork"></div>
                 <div id="bg-layer"></div>
-                <div id="player">
-                    <div id="player-track" className={this.state.trackAlbumClass}>
+                <div id="player-track">
+                    <div className="control manifest">
+                        Manifesto Estranha-Vozes
+                    </div>
                     <div id="lyrics">
                         {this.state.lyric}
                     </div>
                     <div id="s-area">
-                        <div id="ins-time"></div>
-                        <div id="s-hover"></div>
                         <div id="seek-bar" style={{width: `${this.state.playProgress}%`}}></div>
                     </div>
-                    </div>
+                </div>
+                <div id="player">
                     <div id="player-content">
-                    <div id="album-art" className={this.state.trackAlbumClass}>
-                        <img src={this.profilePic(this.state.name)} className="active" id="_1" alt="Voz Estranha"/>
-                        <div id="buffer-box">Carregando ...</div>
-                    </div>
-                    <div id="player-controls">
-                        <div className="control">
-                            <div className="button" id="play-pause-button" onClick={() => this.playPause(this)}>
-                                <i className="fas fa-play" className={this.iPlayClasses}></i>
+                        <div id="album-art" className={this.state.trackAlbumClass}>
+                            <img src={this.profilePic(this.state.name)} className="active" id="_1" alt="Voz Estranha"/>
+                        </div>
+                        <div id="player-controls-name" className="player-controls">
+                            <div className="control-name">
+                                {this.currentName(this.state.name)}
                             </div>
                         </div>
-                        <div className="control-name">
-                            {this.currentName(this.state.name)}
-                        </div>
+                        
                     </div>
+                    <div id="player-controls-play" className="player-controls">
+                        <div className="control">
+                            <div className="button" id="play-pause-button" onClick={() => this.playPause(this)}>
+                                <FontAwesomeIcon icon={this.state.playerIcon} />
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -173,4 +176,4 @@ class Player extends React.Component {
     }
 }
 
-export default Player
+export default Player;
