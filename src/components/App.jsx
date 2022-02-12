@@ -72,7 +72,7 @@ class Play extends React.Component {
 
     profilePic(name) {
         // TODO: Dynamically render pictures when name.includes("&")
-        return `https://github.com/jcezarms/strangers/master/public/assets/img/users/${name}/profile.jpg`
+        return `https://github.com/jcezarms/strangers/blob/master/public/assets/img/users/${name}/profile.jpg?raw=true`
     }
 
     currentName(name) {
@@ -184,7 +184,7 @@ class Play extends React.Component {
 
 class App extends React.Component {
     render() {
-      const manifestUrl = "https://github.com/jcezarms/strangers/master/public/assets/audio/3_cadence/ManifestoEstranha-Vozes.ogg"
+      const manifestUrl = "https://github.com/jcezarms/strangers/blob/master/public/assets/audio/3_cadence/ManifestoEstranha-Vozes.ogg?raw=true"
       return (
         <div className="App">
           <Play url={manifestUrl} />
