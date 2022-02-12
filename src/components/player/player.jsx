@@ -63,7 +63,7 @@ class Player extends React.Component {
 
     profilePic(name) {
         // TODO: Dynamically render pictures when name.includes("&")
-        return `https://raw.githubusercontent.com/jcezarms/strangers/master/assets/img/users/${name}/profile.jpg`
+        return `${process.env.PUBLIC_URL}/assets/img/users/${name}/profile.jpg`
     }
 
     currentName(name) {

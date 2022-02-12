@@ -1,7 +1,8 @@
 'use strict'
 
-const { resolve } = require('path')
+const { resolve } = require('path');
 const path = require('path');
+const Dotenv = require('dotenv-webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
@@ -36,14 +37,20 @@ module.exports = {
             ]
         },
         {
-            test: /\.(png|jp(e*)g|svg|gif)$/,
-            use: ['file-loader'],
+          test: /\.(png|svg|jpg|jpeg|gif|ico)$/,
+          exclude: /node_modules/,
+          use: ['file-loader?name=[name].[ext]'] // ?name=[name].[ext] is only necessary to preserve the original file name
+        },
+        {    
+          test: /\.(woff|woff2|eot|ttf|otf)$/,
+          loader: "file-loader"
         }
     ]
   },
   plugins: [
+    new Dotenv(),
     new HtmlWebpackPlugin({
         template: path.join(__dirname, "public", "index.html"),
-    }),
+    })
   ],
 }

@@ -4,24 +4,24 @@
   
   @font-face {
     font-family: Gordita;
-    src: url("/assets/font/Gordita/Gordita-Regular.otf");
+    src: url("/public/assets/font/Gordita/Gordita-Regular.otf");
   }
 
   @font-face {
     font-family: Gordita;
-    src: url("/assets/font/Gordita/Gordita-RegularItalic.otf");
+    src: url("/public/assets/font/Gordita/Gordita-RegularItalic.otf");
     font-style: italic;
   }
 
   @font-face {
     font-family: Gordita;
-    src: url("/assets/font/Gordita/Gordita-Bold.otf");
+    src: url("/public/assets/font/Gordita/Gordita-Bold.otf");
     font-weight: bold;
   }
 
   @font-face {
     font-family: Gordita;
-    src: url("/assets/font/Gordita/Gordita-Black.otf");
+    src: url("/public/assets/font/Gordita/Gordita-Black.otf");
     font-weight: bolder;
   }
 
