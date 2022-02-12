@@ -5,6 +5,7 @@ node_modules
 *.pyc
 .grunt
 __benchmarks__
+dist/
 build/
 remote-repo/
 coverage/
