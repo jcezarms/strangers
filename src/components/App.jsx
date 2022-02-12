@@ -64,7 +64,7 @@ class Play extends React.Component {
             trackAlbumClass: "",
             playerIcon: "play",
             newMemory: "hidden",
-            videoURL: "https://drive.google.com/file/d/1H2mGGp6LMTXk6h9NVbJZWx73J_tN7ILC/view?usp=sharing"
+            videoURL: "https://drive.google.com/uc?export=download&id=1H2mGGp6LMTXk6h9NVbJZWx73J_tN7ILC"
         };
         this.audio = React.createRef();
         this.seekBar = React.createRef();
@@ -118,7 +118,7 @@ class Play extends React.Component {
             playerIcon: "play",
             newMemory: "visible"
         });
-        this.newMemoryRef.current.scrollIntoView({ behavior: 'smooth' })
+        _this.newMemoryRef.current.scrollIntoView({ behavior: 'smooth' })
     }
 
     playPause(_this) {
@@ -182,13 +182,11 @@ class Play extends React.Component {
                         </div>
                     </div>
                         <div className="control manifest" style={{visibility: this.state.newMemory}} ref={this.newMemoryRef}>
-                            Você desbloqueou uma memória.
-                            <br />
-                            <a
-                                href={this.state.videoURL}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                            >Assista com carinho!</a>
+                            Você desbloqueou <a
+                                                href={this.state.videoURL}
+                                                target="_blank"
+                                                rel="noopener noreferrer"
+                                             >uma memória</a>.
                         </div>
                 </div>
             </div>
